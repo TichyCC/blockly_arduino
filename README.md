@@ -3,7 +3,6 @@
 A special topic in school
 
 using 1. electorn paltform for writing desktop app by JS.
-      
       2. blockly libraries.
       
 goal: A tool that easy to generate Arduino code.
