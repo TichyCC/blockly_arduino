@@ -1,0 +1,81 @@
+<!--
+  Problems:
+    1. generate code
+    2. self generate category
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- inject -->
+    <script src="../blockly_compressed.js"></script>
+    <script src="../blocks_compressed.js"></script>
+
+    <!-- include lang -->
+    <script src="../msg/js/en.js"></script>
+
+    <!-- user definition of code -->
+    <script src="my_blocks.js"></script>
+  </head>
+  <body>
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+
+    <xml id="toolbox" style="display: none">
+      <block type="controls_if"></block>
+      <block type="controls_repeat_ext"></block>
+      <block type="logic_compare"></block>
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+      <block type="text"></block>
+      <block type="text_print"></block>
+      <category name="Text">
+        <block type="string_length"></block>
+      </category>
+    </xml>
+
+    <script>
+      var workspace = Blockly.inject('blocklyDiv',
+      {toolbox: document.getElementById('toolbox')});
+
+
+      /*auto gene code for Colours category*/
+      /*
+      myApplication.coloursFlyoutCallback = function(workspace) {
+        // Returns an array of hex colours, e.g. ['#4286f4', '#ef0447']
+        var colourList = myApplication.getPalette();
+        var xmlList = [];
+        if (Blockly.Blocks['colour_picker']) {
+          for (var i = 0; i < colourList.length; i++) {
+            var blockText = '<xml>' +
+                '<block type="colour_picker">' +
+                '<field name="COLOUR">' + colourList[i] + '</field>' +
+                '</block>' +
+                '</xml>';
+            var block = Blockly.Xml.textToDom(blockText).firstChild;
+            xmlList.push(block);
+          }
+        }
+        return xmlList;
+      };
+      myWorkspace.registerToolboxCategoryCallback(
+        'COLOUR_PALETTE', myApplication.coloursFlyoutCallback);
+      */
+      alert('testing');
+    </script> -->
+
+    <!-- generate code -->
+    <!-- <script>
+      Blockly.JavaScript['text_length'] = function(block) {
+        //String or array length.
+        var argument0 = Blockly.JavaScript.valueToCode(block, 'VALUE',
+        Blockly.JavaScript.ORDER_FUNCTION_CALL) || '\'\'';
+        return [argument0 + '.length', Blockly.JavaScript.ORDER_MEMBER];
+      };
+    </script>
+  </body>
+</html>
