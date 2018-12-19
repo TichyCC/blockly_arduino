@@ -11,33 +11,45 @@ const errFunc = (err) => {
 
 //events records
 let movingFunc = (event) => {
-  let d = new Date();
   if(event.type == Blockly.Events.MOVE) {
-    fs.appendFile(path, "Moving, " + d.toString() + "\n", errFunc);
+    let d = new Date();
+    let id = event.blockId;
+    fs.appendFile(path,
+      "ID: (" + id +") move, " + d.toString() + "\n",
+      errFunc);
   }
 }
 Code.workspace.addChangeListener(movingFunc);
 
 let creatFunc = (event) => {
-  let d = new Date();
   if(event.type == Blockly.Events.BLOCK_CREATE) {
-    fs.appendFile(path, "creating, " + d.toString() + "\n", errFunc);
+    let d = new Date();
+    let id = event.blockId;
+    fs.appendFile(path,
+      "ID: (" + id +") creat, " + d.toString() + "\n",
+      errFunc);
   }
 }
 Code.workspace.addChangeListener(creatFunc);
 
 let deleteFunc = (event) => {
-  let d = new Date();
   if(event.type == Blockly.Events.DELETE) {
-    fs.appendFile(path, "deleting, " + d.toString() + "\n", errFunc);
+    let d = new Date();
+    let id = event.blockId;
+    fs.appendFile(path,
+      "ID: (" + id +") delete, " + d.toString() + "\n",
+      errFunc);
   }
 }
 Code.workspace.addChangeListener(deleteFunc);
 
 let changeFunc = (event) => {
-  let d = new Date();
   if(event.type == Blockly.Events.CHANGE) {
-    fs.appendFile(path, "changing, " + d.toString() + "\n", errFunc);
+    let d = new Date();
+    let id = event.blockId;
+    fs.appendFile(path,
+      "ID: (" + id +") change, " + d.toString() + "\n",
+      errFunc);
   }
 }
 Code.workspace.addChangeListener(changeFunc);
