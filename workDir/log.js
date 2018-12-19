@@ -18,8 +18,22 @@ let movingFunc = (event) => {
 Code.workspace.addChangeListener(movingFunc);
 
 let creatFunc = (event) => {
-  if(event.type == Blockly.Events.CREAT) {
+  if(event.type == Blockly.Events.BLOCK_CREATE) {
     fs.appendFile(path, "creat\n", errFunc);
   }
 }
 Code.workspace.addChangeListener(creatFunc);
+
+let deleteFunc = (event) => {
+  if(event.type == Blockly.Events.DELETE) {
+    fs.appendFile(path, "delete\n", errFunc);
+  }
+}
+Code.workspace.addChangeListener(deleteFunc);
+
+let changeFunc = (event) => {
+  if(event.type == Blockly.Events.CHANGE) {
+    fs.appendFile(path, "change\n", errFunc);
+  }
+}
+Code.workspace.addChangeListener(changeFunc);
